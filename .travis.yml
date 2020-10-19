@@ -15,7 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t udacity-3-apifeed .
+  - docker build -t udacity-3-apiusers .
   - docker tag udacity-3-apiusers fjenkel/udacity-3-apiusers:latest
 
 after_success:
