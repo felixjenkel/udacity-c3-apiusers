@@ -4,7 +4,7 @@
 # DO NOT STORE YOUR CREDENTIALS INTO GIT
 
 docker kill my-test-db
-docker kill udacity-api-feed
+docker kill udacity-api-users
 
 export POSTGRES_USERNAME=postgres
 export POSTGRES_PASSWORD=postgres
@@ -14,7 +14,8 @@ export AWS_BUCKET=test-udacity-course3-felix
 export AWS_REGION=eu-west-1
 export AWS_PROFILE=udacity_felix
 export JWT_SECRET=test
-export URL=http://localhost:8080
+export URL=http://localhost:8081
+export PORT=8081
 
 
 docker run \
@@ -32,19 +33,19 @@ docker run \
 
 sleep 2
 
-docker run \
-    --network=host \
-    -d \
-    --rm \
-    --name udacity-api-feed \
-    -p 8080:8080 \
-    -e POSTGRES_USERNAME \
-    -e POSTGRES_PASSWORD \
-    -e POSTGRES_HOST \
-    -e POSTGRES_DB \
-    -e AWS_BUCKET \
-    -e AWS_REGION \
-    -e AWS_PROFILE \
-    -e JWT_SECRET \
-    -e URL \
-    udacity-api-feed:latest
+# docker run \
+#     --network=host \
+#     -d \
+#     --rm \
+#     --name udacity-api-feed \
+#     -p 8080:8080 \
+#     -e POSTGRES_USERNAME \
+#     -e POSTGRES_PASSWORD \
+#     -e POSTGRES_HOST \
+#     -e POSTGRES_DB \
+#     -e AWS_BUCKET \
+#     -e AWS_REGION \
+#     -e AWS_PROFILE \
+#     -e JWT_SECRET \
+#     -e URL \
+#     udacity-api-feed:latest
