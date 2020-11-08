@@ -37,7 +37,7 @@ sleep 2
 #     --network=host \
 #     -d \
 #     --rm \
-#     --name udacity-api-feed \
+#     --name udacity-api-users \
 #     -p 8080:8080 \
 #     -e POSTGRES_USERNAME \
 #     -e POSTGRES_PASSWORD \
@@ -48,4 +48,4 @@ sleep 2
 #     -e AWS_PROFILE \
 #     -e JWT_SECRET \
 #     -e URL \
-#     udacity-api-feed:latest
+#     udacity-api-users:latest
