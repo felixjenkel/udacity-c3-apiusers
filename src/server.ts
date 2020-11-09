@@ -10,8 +10,30 @@ import {V0_USER_MODELS} from './controllers/v0/model.index';
 
 
 (async () => {
-  await sequelize.addModels(V0_USER_MODELS);
-  await sequelize.sync();
+
+  console.log(process.env.POSTGRES_USERNAME);
+  console.log(process.env.POSTGRES_PASSWORD);
+  console.log(process.env.POSTGRES_DB);
+  console.log(process.env.POSTGRES_HOST);
+  console.log(process.env.AWS_REGION);
+  console.log(process.env.AWS_PROFILE);
+  console.log(process.env.AWS_BUCKET);
+  console.log(process.env.URL);
+  console.log(process.env.JWT_SECRET);
+  console.log(process.env.PORT);
+
+
+  try {
+    await sequelize.addModels(V0_USER_MODELS);
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    await sequelize.sync();
+  } catch (error) {
+    console.log(error);
+  }
 
   const app = express();
   const port = process.env.PORT || 8080;
