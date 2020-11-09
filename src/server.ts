@@ -59,8 +59,7 @@ import {V0_USER_MODELS} from './controllers/v0/model.index';
 
   // Health endpoint
   app.get( '/health', async ( req, res ) => {
-    res.send( 'up' );
-    res.sendStatus(200);
+    res.sendStatus(200).send( 'up' );
   } );
 
 
