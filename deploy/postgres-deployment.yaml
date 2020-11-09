@@ -1,14 +1,18 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres
+  labels:
+    app: udacity-3-apiusers-pg
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: udacity-3-apiusers-pg
   template:
     metadata:
       labels:
-        app: postgres
-        service: apiusers-pg
+        app: udacity-3-apiusers-pg
     spec:
       containers:
         - name: postgres
@@ -32,6 +36,3 @@ spec:
                 secretKeyRef:
                   name: api-users-scr
                   key: postgres-db
-          volumeMounts:
-            - mountPath: /var/lib/postgresql/data
-              name: postgredb
