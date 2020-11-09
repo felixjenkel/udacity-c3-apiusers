@@ -10,4 +10,4 @@ spec:
     port: 5432
     targetPort: 5432
   selector:
-    service: apiusers-pg
+    app: udacity-3-apiusers-pg
